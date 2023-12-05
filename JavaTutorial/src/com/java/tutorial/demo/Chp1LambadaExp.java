@@ -1,8 +1,9 @@
+package com.java.tutorial.demo;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
 
-public class ChpOneLambadaExp {
+public class Chp1LambadaExp {
     public static void main(String[] args){
         // 1========Lambada Expression No Parameter
         //LambadaExpNoParameter();
@@ -29,7 +30,7 @@ public class ChpOneLambadaExp {
     }
 
     public static void LambadaExpWithParameter(){
-        File directory = new File("./src");
+        File directory = new File("./src/com/java/tutorial/demo");
         String[] names = directory.list(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
