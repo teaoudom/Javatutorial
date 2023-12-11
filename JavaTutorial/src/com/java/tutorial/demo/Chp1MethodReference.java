@@ -1,7 +1,9 @@
 package com.java.tutorial.demo;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class Chp1MethodReference {
 	//Use the double-colon notation to separate an instance reference or class name from the
@@ -40,6 +42,8 @@ public class Chp1MethodReference {
 	
 	String name;
 
+	public Chp1MethodReference() {}
+	
     //constructor
     public Chp1MethodReference(String name){
         this.name = name;
@@ -87,6 +91,16 @@ public class Chp1MethodReference {
 		Arrays.sort(personArray, c1::personInstanceMethod2);
 		
 		Arrays.asList(personArray).stream().forEach(a->System.out.println(a.name+","));
+		
+		List<String> names = Arrays.asList("Grace Hopper", "Barbara Liskov", "Ada Lovelace","Karen Spärck Jones");
+		
+		List<Chp1MethodReference> listNames = names.stream().map(Chp1MethodReference::new).collect(Collectors.toList());
+		
+		listNames.forEach(a->System.out.println(a.name));
+		
+		Chp1MethodReference[] people = names.stream()
+											.map(Chp1MethodReference::new)
+											.toArray(Chp1MethodReference[]::new);
 	
 	}
 
